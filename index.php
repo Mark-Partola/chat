@@ -9,11 +9,19 @@ switch ($act) {
 		require ('templates/guest.php');
 		break;
 	case 'registration':
-		require ('registration.php');
-		break;/*
+		$dataReg = checkRegForm();
+		if($dataReg){
+		 	if(createNewUser($login, $password)){
+		 		echo "Создан";
+		 	}else{
+		 		echo "Ошибка";
+		 	}
+		 }else{
+			echo "Не все поля!";
+		}
+		break;
 	case 'login':
 		require ('login.php');
 		break;
 	default:
-}*/
 }

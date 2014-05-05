@@ -43,7 +43,7 @@
 </header>
 <body>
 	<div id="div_registration">
-		<form action="registration.php" method="post" id="form_reg">
+		<form action="?act=registration" method="post" id="form_reg">
 			<h1>Регистрация</h1>
 			<label>Login: <input type="text" name="login" placeholder="login"></label>
 			<label>Password: <input type="password" name="password" placeholder="password"></label>
