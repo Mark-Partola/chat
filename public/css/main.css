@@ -1,0 +1,81 @@
+html, body,p{
+	margin: 0;
+	padding: 0;
+}
+body{
+	font-family: Verdana, Tahoma, sans-serif;
+	background-color: #999;
+}
+header{
+	background: #222;
+	height: 100px;
+	color: white;
+	text-align: center;
+	font-size: 3em;
+	line-height: 2em ;
+}
+.container{
+	margin: 10px auto;
+	padding: 20px;
+	width: 510px;
+	border: 10px solid #aaa;
+	border-radius:50px;
+	background-color: #eee;
+}
+#input{
+	width:50%;
+	margin:10px auto;
+	border: 5px solid #aaa;
+	padding: 10px;
+	border-radius: 20px;
+}
+#input label, #input input, #input textarea{
+	display: block;
+	width:95%;
+	padding: 3px 0px 3px 0px;
+}
+#input input[type='submit']{
+	width: 99%;
+	padding: 10px;
+	color: black;
+	border-radius: 50%;
+	border: 1px solid #000;
+	background-color: #aaa;
+	margin-top: 5px;
+}
+#input input[type='submit']:hover{
+	background-color: #cfc;
+}
+#messages{
+	width: 500px;
+	height: 500px;
+	margin-top: 30px;
+	border: 3px solid #ccc;
+	border-radius: 10px;
+	overflow: auto;
+	padding: 10px;
+}
+.msg-wrap{
+	border-bottom: 2px solid #ccc;
+	padding:10px;
+}
+.snd{
+	font-size: 0.7em;
+}
+.msg{
+	font-size: 1.2em;
+}
+#feedback{
+	padding: 20px;
+	border: 3px solid #cfc;
+	background-color: #cfc;
+	border-radius: 10px;
+	display: none;
+	width:400px;
+	word-wrap:break-word;
+	position: absolute;
+	bottom:50px;
+	left:50px;
+	color:#0f0;
+	font-size: 1.5em;
+}
