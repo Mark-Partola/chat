@@ -11,7 +11,7 @@ switch ($act) {
 	case 'registration':
 		$dataReg = checkRegForm();
 		if($dataReg){
-		 	if(createNewUser($login, $password)){
+		 	if(createNewUser($dataReg['login'], $dataReg['password'])){
 		 		echo "Создан";
 		 	}else{
 		 		echo "Ошибка";

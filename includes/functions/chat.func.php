@@ -104,6 +104,20 @@ function checkRegForm(){
 
 }
 
-function createNewUser($login, $password){
+function createNewUser($login, $password, $role = 5){
+	global $db;
 
+	if (!empty($login) && !empty($password)){
+		$sql = "INSERT INTO users(login, password, role) VALUES(?,?,?)";
+		$result = $db->prepare($sql);
+		$result->bind_param('ssi', $login, $password, $role);
+
+		if($result->execute()){
+			echo "New user created!";
+			return true;
+		}else
+			echo "New user don't created!";
+			return false;
+
+	}
 }
