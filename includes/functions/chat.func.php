@@ -5,7 +5,7 @@ function get_msg(){
 
 	$query = "SELECT sender, message
 				 FROM chat
-				 ORDER BY msgs_ID DESC";
+				 ORDER BY mgs_ID DESC";
 
 	// if(method_exists($db, 'getInfo')){
 	// 	return $db->get_msg();
