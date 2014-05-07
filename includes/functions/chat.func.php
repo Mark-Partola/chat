@@ -123,5 +123,32 @@ function createNewUser($login, $password, $role = 5){
 }
 
 function checkFormLogin(){
-	return false;
+	global $db;
+
+	$login = clearStr($_POST['login']);
+	$password = (clearStr($_POST['password']));
+
+	$sql = "SELECT user_ID FROM users 
+				WHERE login = '$login' and password = '$password'";
+
+	$result = $db->query($sql);
+
+	if(!$result){ 
+		// $feedback[] = 'Ошибка при выборке пароля и логина!';
+		echo 'Ошибка при выборке пароля и логина!';
+		return false;
+	}
+
+	$check = $result->fetch_assoc();
+	var_dump($check);
+
+	if($check['user_ID']) {
+		$_SESSION['login'] = true;
+		// $_SESSION['role'] = 5;
+		return true;
+	}
+	else
+		return false;
+
+
 }

@@ -1,9 +1,9 @@
 <?php
-header('Content-type: text/html; charset=utf-8');
 require('includes/core.inc.php');
 require('includes/functions/chat.func.php');
 
 $act = isset($_GET['act']) ? $_GET['act'] : 'guest';
+
 switch ($act) {
 
 	case 'guest':
@@ -16,7 +16,8 @@ switch ($act) {
 
 	case 'login':
 		if(checkFormLogin()){
-			require('templates/chat.php');
+			header('Location: control/chat.php');
+			
 		}else{
 			header('Location: index.php');
 		}

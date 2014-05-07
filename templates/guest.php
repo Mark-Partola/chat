@@ -1,3 +1,9 @@
+<?php 
+// if($_SESSION['login'])
+// 	header('Location: control/chat.php');
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
