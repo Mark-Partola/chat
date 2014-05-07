@@ -9,18 +9,29 @@
 		$(document).ready(function(){
 
 /*При клике по кнопки регистрации появляется блок на весь экран с формой*/
-			$('#btn_registration').on('click', function(){
-				$('#div_registration').css({
+			$('#btn_authorization').on('click', function(){
+				$('#div_authorization').css({
 					"display": "block"
 				 }).animate({
 				 	"opacity": "0.9"
 				 }), 2000;
 
+			/*$('#btn_authorization').on('click', function(){
+				$('#div_authorization').css({
+					"display": "block"
+				 }).animate({
+				 	"opacity": "0.9"
+				 }), 2000;
+			});*/
+
+
+
+
 /*Если блок видимый, при клике по нему, но не по форме, скрывать его (магия)*/
-				if($('#div_registration').is(":visible")){
-					$('#div_registration').click(function(event){
-						if($(event.target).closest('#form_reg').length === 0){
-							$('#div_registration').css({
+				if($('#div_authorization').is(":visible")){
+					$('#div_authorization').click(function(event){
+						if($(event.target).closest('#form_auth').length === 0){
+							$('#div_authorization').css({
 									"display": "none",
 									"opacity": "0"
 							});
@@ -37,22 +48,29 @@
 <header>
 	<p><a href="?">Online Chat</a></p>
 	<ul>
-		<li id="btn_registration"><a href="#">Регистрация</a></li>
-		<li><a href="?act=login">Вход</a></li>
+		<li id="btn_registration"><a href="?act=registration">Регистрация</a></li>
+		<li id="btn_authorization"><a href="#">Вход</a></li>
 	</ul>
 </header>
 <body>
-	<div id="div_registration">
-		<form action="?act=registration" method="post" id="form_reg">
-			<h1>Регистрация</h1>
+	<div id="div_authorization">
+		<form action="?act=login" method="post" id="form_auth">
+			<!-- <h1>Регистрация</h1>
 			<label>Login: <input type="text" name="login" placeholder="login"></label>
 			<label>Password: <input type="password" name="password" placeholder="password"></label>
 			<img src="includes/functions/noise_image.php">
 			<label>Enter the string: <input type="text" name="str"></label>
-			<input type="submit" value="Регистрация">
+			<input type="submit" value="Регистрация"> -->
+
+			<h1>Авторизация</h1>
+			<label>Логин: <input type="text" name="login" placeholder="Ваш логин"></label>
+			<label>Пароль: <input type="password" name="password" placeholder="Ваш пароль"></label>
+			<input type="submit" value="Вход">
+
 		</form>
 	</div>
 	<div class="container">
+		<p>Авторизуйтесь, чтобы оставлять сообщения</p>
 		<!-- <div id="input">
 			<div id="feedback"></div>
 			<form action="" method="post" id="form_input">

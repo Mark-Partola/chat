@@ -121,3 +121,7 @@ function createNewUser($login, $password, $role = 5){
 
 	}
 }
+
+function checkFormLogin(){
+	return false;
+}

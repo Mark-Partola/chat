@@ -5,23 +5,23 @@ require('includes/functions/chat.func.php');
 
 $act = isset($_GET['act']) ? $_GET['act'] : 'guest';
 switch ($act) {
+
 	case 'guest':
 		require ('templates/guest.php');
 		break;
+
 	case 'registration':
-		$dataReg = checkRegForm();
-		if($dataReg){
-		 	if(createNewUser($dataReg['login'], $dataReg['password'])){
-		 		echo "Создан";
-		 	}else{
-		 		echo "Ошибка";
-		 	}
-		 }else{
-			echo "Не все поля!";
+		require('templates/registration.php');
+		break;
+
+	case 'login':
+		if(checkFormLogin()){
+			require('templates/chat.php');
+		}else{
+			header('Location: index.php');
 		}
 		break;
-	case 'login':
-		require ('login.php');
-		break;
+
 	default:
+		require('templates/errors/404.php');
 }
